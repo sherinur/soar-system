@@ -5,6 +5,7 @@ import (
 
 	"github.com/caarlos0/env/v7"
 	"github.com/joho/godotenv"
+	"github.com/sherinur/soar-system/backend/auth_service/pkg/postgrescon"
 )
 
 type (
@@ -13,6 +14,8 @@ type (
 		ZapLogger ZapLogger
 		Telemetry Telemetry
 		Jwt       Jwt
+
+		Postgres postgrescon.Postgres
 	}
 
 	Server struct {
