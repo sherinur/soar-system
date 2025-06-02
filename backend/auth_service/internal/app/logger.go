@@ -40,7 +40,7 @@ func NewLogger(cfg *config.Config) (*zap.Logger, error) {
 			dir + "debug.log",
 		}
 		config.Encoding = "console"
-		config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+		// config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 	case "test":
 		config = zap.NewProductionConfig()
 		config.OutputPaths = []string{

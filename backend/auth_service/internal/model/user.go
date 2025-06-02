@@ -1,10 +1,7 @@
 package model
 
-type User struct {
-}
+type User struct{}
 
-type UserFilter struct {
-}
+type UserFilter struct{}
 
-type UserUpdateData struct {
-}
+type UserUpdateData struct{}

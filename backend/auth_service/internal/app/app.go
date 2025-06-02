@@ -5,10 +5,11 @@ import (
 
 	"github.com/sherinur/soar-system/backend/auth_service/config"
 	grpcserver "github.com/sherinur/soar-system/backend/auth_service/internal/adapter/grpc/server"
+	"github.com/sherinur/soar-system/backend/auth_service/pkg/postgrescon"
 	"go.uber.org/zap"
 )
 
-const serviceName = "social-service"
+const serviceName = "auth-service"
 
 type App struct {
 	cfg *config.Config
@@ -25,6 +26,13 @@ func New(ctx context.Context, cfg *config.Config) (*App, error) {
 	logger, err := NewLogger(cfg)
 	if err != nil {
 		return nil, err
+	}
+
+	// Postgres connection
+	logger.Info("connecting to postgresql", zap.String("database", cfg.Postgres.DBName))
+	_, err = postgrescon.Connect(&cfg.Postgres)
+	if err != nil {
+		logger.Fatal("error occured when connecting to postgresql", zap.Error(err))
 	}
 
 	// controllers ...
