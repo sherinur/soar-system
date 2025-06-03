@@ -1,8 +1,0 @@
-2025-06-02 19:17:33	INFO	app/app.go:32	connecting to postgresql	{"database": "auth_db"}
-2025-06-02 19:17:33	FATAL	app/app.go:35	error occured when connecting to postgresql	{"error": "pq: password authentication failed for user \"admin\""}
-github.com/sherinur/soar-system/backend/auth_service/internal/app.New
-	/home/sherinur/git/soar-system/backend/auth_service/internal/app/app.go:35
-main.main
-	/home/sherinur/git/soar-system/backend/auth_service/cmd/auth/main.go:21
-runtime.main
-	/snap/go/10888/src/runtime/proc.go:283

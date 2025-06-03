@@ -1,12 +1,12 @@
-# social-service
+# auth-service
 
 ## Implementation
 
 Used clean architecture.
 Logging with zap.
 Scraping of tracers, metrics and logs via otel.
-Local file storage via local S3 (https://github.com/sherinur/triple-s)
-gRPC server contains interceptors: logging, error, recovery
+Database is PostgreSQL.
+gRPC server contains interceptors: logging, error, recovery.
 
 ## Adapters:
 
@@ -16,7 +16,7 @@ gRPC server contains interceptors: logging, error, recovery
 - http (gin)
 
 ##### Repositories:
-- local s3 storage (https://github.com/sherinur/triple-s)
+- PostgreSQL
 
 ## Dependencies:
 
@@ -33,4 +33,6 @@ gRPC server contains interceptors: logging, error, recovery
 
 - github.com/caarlos0/env/v7 v7.1.0 (for config .env parsing)
 
-- s3conn in pkg (to setup local s3 storage)
+- postgrecon in pkg (for connection to psql)
+
+- github.com/sethvargo/go-password (for password generation)
